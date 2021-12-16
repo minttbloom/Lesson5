@@ -239,10 +239,10 @@ func main() {
 	fmt.Println(all.figuresCount())
 
 	fmt.Println("------------------------Added all figures in slice------------------------")
-	nCircle := &circle{circleRadius: 10}
+	nCircle := newCircle(10)
 	all.addFigure(nCircle)
-	all.addFigure(&parallelogram{parTopBottomSides: 15, parAnotherSide: 10})
-	all.addFigure(&rectangle{recLength: 15, recWidth: 10})
+	all.addFigure(newParallelogram(15, 10))
+	all.addFigure(newRectangle(15, 10))
 
 	for _, figure := range all.figures {
 		fmt.Printf("%s %s%v %s%v\n", reflect.TypeOf(figure), "area:", figure.area(), "perimeter:", figure.perimeter())
